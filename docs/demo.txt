@@ -1,0 +1,17 @@
+DUPLICATE FILE FINDER — READ-ONLY
+Status: COMPLETE within selected scope
+Files considered: 6 | Files hashed: 5
+Duplicate groups: 2
+Logical duplicate bytes: 173 (not a disk-space guarantee)
+
+Group 1 | 33 bytes each | SHA-256 c565f8b67399efca...
+  "archive/inventory-copy.csv"
+  "inventory.csv"
+
+Group 2 | 70 bytes each | SHA-256 ea9bc639424d27e6...
+  "archive/notes-backup.txt"
+  "notes-copy.txt"
+  "notes.txt"
+
+No source files were modified or deleted.
+Report: docs/demo.json

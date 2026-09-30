@@ -1,0 +1,24 @@
+test_changed_during_hash_is_partial (test_duplicate_finder.DuplicateTests.test_changed_during_hash_is_partial) ... ok
+test_changed_file_rejected (test_duplicate_finder.DuplicateTests.test_changed_file_rejected) ... ok
+test_cli_demo (test_duplicate_finder.DuplicateTests.test_cli_demo) ... ok
+test_different_names_same_content (test_duplicate_finder.DuplicateTests.test_different_names_same_content) ... ok
+test_empty_files (test_duplicate_finder.DuplicateTests.test_empty_files) ... ok
+test_empty_folder (test_duplicate_finder.DuplicateTests.test_empty_folder) ... ok
+test_files_remain_unchanged (test_duplicate_finder.DuplicateTests.test_files_remain_unchanged) ... ok
+test_hardlinks_count_once (test_duplicate_finder.DuplicateTests.test_hardlinks_count_once) ... ok
+test_hash_matches_known_sha (test_duplicate_finder.DuplicateTests.test_hash_matches_known_sha) ... ok
+test_hidden_and_ignored_directories (test_duplicate_finder.DuplicateTests.test_hidden_and_ignored_directories) ... ok
+test_invalid_root (test_duplicate_finder.DuplicateTests.test_invalid_root) ... ok
+test_limit_refusal (test_duplicate_finder.DuplicateTests.test_limit_refusal) ... ok
+test_output_does_not_overwrite (test_duplicate_finder.DuplicateTests.test_output_does_not_overwrite) ... ok
+test_same_size_different_content_not_grouped (test_duplicate_finder.DuplicateTests.test_same_size_different_content_not_grouped) ... ok
+test_sample_groups_and_bytes (test_duplicate_finder.DuplicateTests.test_sample_groups_and_bytes) ... ok
+test_symlink_file_and_directory_skipped (test_duplicate_finder.DuplicateTests.test_symlink_file_and_directory_skipped) ... ok
+test_symlink_root_rejected (test_duplicate_finder.DuplicateTests.test_symlink_root_rejected) ... ok
+test_terminal_paths_are_escaped (test_duplicate_finder.DuplicateTests.test_terminal_paths_are_escaped) ... ok
+test_unique_sizes_avoid_hashing (test_duplicate_finder.DuplicateTests.test_unique_sizes_avoid_hashing) ... ok
+
+----------------------------------------------------------------------
+Ran 19 tests in 0.606s
+
+OK

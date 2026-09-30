@@ -1,0 +1,52 @@
+{
+  "root_name": "files",
+  "complete": true,
+  "files_considered": 6,
+  "files_hashed": 5,
+  "bytes_hashed_successfully": 276,
+  "skipped_entries": 0,
+  "hardlink_aliases_skipped": 0,
+  "group_count": 2,
+  "groups": [
+    {
+      "size_bytes": 33,
+      "sha256": "c565f8b67399efca96c13c428f504b9e0441cd3d6890d76d10e59eadb46ef01f",
+      "files": [
+        "archive/inventory-copy.csv",
+        "inventory.csv"
+      ],
+      "logical_duplicate_bytes": 33
+    },
+    {
+      "size_bytes": 70,
+      "sha256": "ea9bc639424d27e67fb781839d52f6e5c937f468b1f8ed54088f6ba026590f96",
+      "files": [
+        "archive/notes-backup.txt",
+        "notes-copy.txt",
+        "notes.txt"
+      ],
+      "logical_duplicate_bytes": 140
+    }
+  ],
+  "logical_duplicate_bytes": 173,
+  "warnings": [],
+  "scope": {
+    "include_hidden": false,
+    "ignored_directories": [
+      ".git",
+      ".venv",
+      "__pycache__",
+      "node_modules"
+    ],
+    "max_files": 10000,
+    "max_hash_bytes": 268435456
+  },
+  "notes": [
+    "Read-only scan: no source file is deleted, renamed, or rewritten.",
+    "Groups match size and SHA-256; there is no separate byte-by-byte comparison.",
+    "Logical duplicate bytes are not guaranteed recoverable disk space.",
+    "Hard-link aliases are counted once. Symlinks and nonregular files are skipped.",
+    "Complete means no observed read errors within the stated scope, not a whole-disk inventory.",
+    "This is not an adversarial filesystem sandbox; use a stable local directory."
+  ]
+}
