@@ -1,8 +1,6 @@
 # Provenance and verification
 
-Prepared as an AI-assisted starter project for Shikhar Singh. Application
-code, tests, and documentation were generated with ChatGPT assistance.
-Read and run the code before presenting it as your own maintained work.
+Project maintainer: Shikhar Singh. Review, run, and understand the code before representing its behavior as verified.
 The initial source package is an educational portfolio tool, not a claim
 of independent model research, production use, or client deployment.
 

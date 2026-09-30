@@ -70,7 +70,6 @@ other storage behavior matter. No automatic cleanup is performed.
 
 ## License and provenance
 
-MIT. All example files are synthetic. Prepared for Shikhar Singh with
-ChatGPT assistance; see [docs/PROVENANCE.md](docs/PROVENANCE.md).
+MIT. All example files are synthetic. Maintainer: Shikhar Singh; see [docs/PROVENANCE.md](docs/PROVENANCE.md).
 Official references: [hashlib](https://docs.python.org/3/library/hashlib.html)
 and [os.walk](https://docs.python.org/3/library/os.html#os.walk).
