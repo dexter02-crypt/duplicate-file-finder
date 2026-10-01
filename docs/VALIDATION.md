@@ -1,31 +1,70 @@
 # Validation record
 
-## Executed here
+## Public implementation baseline
 
-- Environment: Linux, CPython 3.13.5.
-- Command: `python -B -m unittest discover -s tests -v`.
-- Result: **19 tests passed**, zero failed, zero skipped.
-- Full captured test output: [test-output.txt](test-output.txt).
+Repository: `dexter02-crypt/duplicate-file-finder`
 
-The application and its tests use Python standard-library modules only.
+Baseline `main` commit:
 
-The included `setup.sh` was also executed in a fresh, isolated project copy: it created a new virtual environment and passed all tests without third-party dependencies.
+`c54508aa4390d66320da4262580312ada7a3040d`
 
-## Actual demonstration
+GitHub Actions run `36765362499` completed successfully on that exact commit.
 
-The included six-file fixture yields two duplicate groups, five files hashed and 173 logical duplicate bytes. `docs/demo.txt` and `docs/demo.json` are actual application outputs. These bytes are not a promise of physical disk space recovered. No input file is removed, moved or overwritten.
+The six successful jobs were:
+
+- macOS / Python 3.11
+- macOS / Python 3.13
+- macOS / Python 3.14
+- Ubuntu / Python 3.11
+- Ubuntu / Python 3.13
+- Ubuntu / Python 3.14
+
+Each job checked out the repository, configured Python, processed the dependency file, and ran:
+
+`python -m unittest discover -s tests -v`
+
+## Release-candidate local coverage
+
+The release-candidate suite contains **20 test methods**.
+
+Coverage includes:
+
+- expected duplicate groups and logical duplicate bytes from the synthetic fixture
+- same-size/different-content rejection
+- duplicate content under different filenames and nested paths
+- empty files
+- avoiding hashes for unique sizes
+- hidden and ignored directory behavior
+- symbolic-link skipping and symbolic-link root rejection
+- hard-link alias deduplication
+- known SHA-256 hashing
+- changed-file rejection before and during hashing
+- partial-result behavior
+- file-count and hashing-work limits
+- source-file preservation
+- refusal to overwrite an existing JSON report
+- empty-folder behavior
+- terminal path escaping
+- real CLI execution and JSON output
+- invalid-root rejection
+- package version identity for 0.1.0
+
+The release-candidate workflow adds Python 3.12 on both Ubuntu and macOS, expanding the configured matrix from six to eight jobs. Release publication requires the full eight-job Ubuntu/macOS matrix to pass on the final main commit; branch and pull-request runs are intermediate evidence.
+
+## Demonstration
+
+The included six-file synthetic fixture produces two duplicate groups. The repository includes `docs/demo.txt` and `docs/demo.json` as captured application outputs.
+
+The reported logical duplicate bytes are not a promise of physical disk space that can be reclaimed.
 
 ## Boundaries
 
-macOS installation, your local GUI/file-opening behavior, successful live webcam
-capture, real GitHub publication and GitHub Actions execution have **not** been
-verified by this record. The workflow requests multiple Python/OS combinations;
-that configuration is not evidence that those jobs ran. No measured detection
-accuracy, production-readiness or universal input-correctness claim is made.
-These are author-run tests, not independent certification.
+The application uses Python standard-library modules only.
 
-## Your local verification
+It is intentionally read-only with respect to scanned source files. The optional JSON report is the only CLI output file. Existing report files are not overwritten.
 
-Run setup and the sample on your own machine. Once the repository is published,
-record your actual OS/Python versions, the command, its real result, and one
-small change you understand. Do not rewrite unexecuted checks as passing checks.
+Groups match size and SHA-256; there is no separate byte-for-byte equality pass. Repeated hard links to the same inode are counted once. Symbolic links and nonregular files are skipped.
+
+A file is checked by device, inode, size, modification time, and change time around hashing, but the tool is not an adversarial filesystem sandbox. Directory races and later changes remain outside its guarantees.
+
+GitHub Actions evidence demonstrates only the listed hosted runner/Python combinations. It does not establish universal filesystem behavior, collision impossibility, forensic suitability, or recoverable disk-space guarantees.
