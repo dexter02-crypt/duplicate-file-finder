@@ -7,9 +7,13 @@ import sys
 import tempfile
 import unittest
 from unittest.mock import patch
+import duplicate_finder
 from duplicate_finder.core import FileEntry,digest_file,scan_folder,save_json,signature,terminal_report
 ROOT=Path(__file__).resolve().parents[1]
 class DuplicateTests(unittest.TestCase):
+    def test_package_version_matches_release(self):
+        self.assertEqual(duplicate_finder.__version__, "0.1.0")
+
     def setUp(self):
         self.tmp=tempfile.TemporaryDirectory()
         self.addCleanup(self.tmp.cleanup)
